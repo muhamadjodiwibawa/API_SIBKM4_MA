@@ -9,5 +9,9 @@ namespace API.Models
         public string EmployeeNik { get; set; }
         [Column(name:"password",TypeName ="char(255)")]
         public string Password { get; set; }
+        //cardinality
+        public Employee Employee { get; set; }
+        public ICollection <Account_Role>account_roles{ get; set; }
+
     }
 }

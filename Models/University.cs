@@ -10,5 +10,8 @@ namespace API.Models
 
         [Column(name: "name", TypeName = "char(100)")]
         public string Name { get; set; }
+
+        //cardinalitas 
+        public ICollection<Education> Educations { get; set; }
     }
 }

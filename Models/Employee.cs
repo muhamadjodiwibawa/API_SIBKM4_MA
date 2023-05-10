@@ -22,6 +22,9 @@ namespace API.Models
         public string Email { get; set; }
         [Column(name: "phone_number", TypeName = "varchar(50)")]
         public string PhoneNumer { get; set; }
+        public Profiling Profiling { get; set; }
+        public Account Account { get; set; }
+
 
     }
     public enum Gender  

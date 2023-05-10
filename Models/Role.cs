@@ -6,8 +6,10 @@ namespace API.Models
     public class Role
     {
         [Key,Column(name:"id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
         [Column(name:"name",TypeName ="char(50)")] 
         public string Name { get; set; }
+        //cardinality
+        public ICollection<Account_Role> account_roles { get; set; }
     }
 }

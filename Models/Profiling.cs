@@ -10,7 +10,13 @@ namespace API.Models
         public string EmployeeNIK { get; set; }
 
         [Column(name:"education_id")]
-        public int EducationId { get; set; }
+        public int? EducationId { get; set; }
+
+        //cardinality
+
+        public Education Education { get; set; }
+        public Employee Employee { get; set; }
     }
+
 }
 
