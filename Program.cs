@@ -1,4 +1,6 @@
 using API.Context;
+using API.Repositories.Data;
+using API.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,10 @@ builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString(name: "Default Connection");
 builder.Services.AddDbContext<MyContext>(optionsAction :options=>
 options.UseSqlServer(connectionString));
+
+//Add dependency injection for repository
+builder.Services.AddScoped<IUniversityRepository, UniversityRepository>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
